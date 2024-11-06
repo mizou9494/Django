@@ -1,11 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'newYear/styles.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <h1>{% if isItReallyNewYear %}<h>YES</h>{% else %}<h1>NO</h1>{% endif %}</h1>
+    <h1>{% if isItReallyNewYear %}YES{% else %}NO{% endif %}</h1>
 </body>
 </html>
