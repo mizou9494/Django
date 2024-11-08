@@ -4,9 +4,10 @@
     <h1>Add Task</h1>
 
     <form action="{% url 'tasks:add' %}" method="post">
-        # this token is neccessary for cross site request forgery and is a security layer needed during form submitting
+        <!-- this token is neccessary for cross site request forgery and is a security layer needed during form submitting -->
         {% csrf_token %}
-        <input type="text" name="task" placeholder="{{ task }}">
+        <!-- <input type="text" name="task" placeholder="{{ task }}"> -->
+        {{ form }}
         <button type="submit">Add task</button>
         <a href="{% url 'tasks:index' %}">View Tasks</a>
     </form>

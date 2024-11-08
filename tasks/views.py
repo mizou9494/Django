@@ -1,7 +1,11 @@
+from django import forms
+
 from django.shortcuts import render
-from django.http import HttpResponse
 
 tasks = [ "shop", "work", "pray", "eat", "sleep" ]	
+
+class NewTaskForm(forms.Form):
+    task = forms.CharField(label="New Task")
 # Create your views here.
 def index(request):
     # now we will pass those tasks in an array as an argument and catch them in the html file
@@ -10,4 +14,6 @@ def index(request):
     })
 
 def add(request):
-    return render(request, "tasks/add.html")
+    return render(request, "tasks/add.html", {
+        "form": NewTaskForm()
+    })
